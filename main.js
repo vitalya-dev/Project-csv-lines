@@ -7,7 +7,7 @@ function read_file_to_array(file) {
 var csv = read_file_to_array(process.argv[2]);
 var lines = read_file_to_array(process.argv[3]);
 
-//zeroed lines
+//mark removed lines
 for (var i = 0; i < lines.length; i++) {
   var num = lines[i] - 1;
   if (num < 0)
@@ -15,7 +15,7 @@ for (var i = 0; i < lines.length; i++) {
   csv[num] = ''
 }
 
-//remove zeroed lines
+//remove marked lines
 csv = csv.filter(
   function(item) {
     return item !== ''
